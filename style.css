@@ -1,0 +1,182 @@
+
+
+html, body {
+  height: 100%;
+  width: 100%; 
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+body{
+
+			background-color: #25222B;
+}
+body:before{
+    content:' ';
+    position: absolute;
+    z-index: -1;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    width:100vw; height:100vh;
+  
+    background: url("https://cdn.glitch.com/f5833dbf-5a19-4851-bca0-a6c09a4deca1%2Fnevado.svg");
+  		background-position: center center;
+			background-repeat:  no-repeat;
+			background-attachment: fixed;
+       -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover; 
+			background-size: cover;  
+      
+    animation: fade 5s;
+    opacity: 0.1;
+}
+@keyframes fade {
+    from {opacity: 1;}
+    to {opacity: 0.1;}
+}
+
+
+#canvas{
+  position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    height: 100%; width: 100%;
+  z-index: -1;
+}
+  .axis path,
+  .axis line {
+      fill: none;
+      stroke: #28324e;
+      stroke-width: 1;
+      shape-rendering: crispEdges;
+  }
+    .tick line {
+        stroke: #f5ab45;
+        stroke-width: 1;
+    }
+
+
+#content {  
+  display: flex;
+  justify-content: center;
+  position: relative;
+  
+     
+  
+  /*height: 100%; Do not work for animation, not needed */
+  padding: 0;
+  margin: 0;
+  margin-top: 5%;
+  
+	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+  color: #fff;
+
+  animation: moveup 7s;
+}
+@keyframes moveup {
+    0% {
+     transform: translateY(-50%);
+     top: 50%;
+    }
+    65% {
+     transform: translateY(-50%);
+     top: 50%;
+    }
+    100% {
+     transform: translateY(0%);
+     top: 0;
+    }
+}
+  .row {
+      width: 800px;
+  }
+
+
+.flex-item {
+    margin: 10px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+  .flex-item.show { 
+        width: auto;
+        height: auto;
+        overflow: visible;
+    animation: FadeIn 2s;
+}
+@keyframes FadeIn { 
+      0% {
+          width: 0;
+          height: 0;
+          overflow: hidden;
+      }
+      100% {
+          width: auto;
+          height: auto;
+          overflow: visible;
+      }  
+}
+
+
+
+#logo {
+  width: 23vw;
+    min-width: 230px;
+  margin: auto;
+}
+  #logo path{
+      stroke: #f5ab45;
+      stroke-width: 1;
+      animation: fill 8s;
+      fill: #f5ab45;
+  }
+@keyframes fill {
+    0%   {fill: rgba(0,0,0,0.0);}
+    50%  {fill: rgba(0,0,0,0.1);}
+    70% {fill: #f5ab45;}
+    /*from {fill: }
+    to {fill: #f5ab45;}*/
+}
+
+#utforsk{
+  width: 200px;
+  max-width: 200px!important;
+    margin: auto;
+    padding-top: 50px;
+}
+  #utforsk path, #utforsk text {
+      stroke: #f5ab45;
+      stroke-width: 2;
+  }
+  #utforsk.show .border, #utforsk.show text{
+      animation: fill 4s;
+      fill: #f5ab45;
+  }
+
+.arrow{
+  position: absolute;
+  bottom: 80px;
+  right: 175px;
+  height: 110px;
+  width: 80px;
+}
+  .arrow path {
+    stroke: #f5ab45;
+    fill: none;
+    stroke-width: .800188;
+    transform-origin: 50% 27px;
+    transform: rotate(180deg);
+  }
+  .arrow text {
+    fill: #f5ab45;
+    font-family: sans-serif;
+    font-size: 6.1px;
+    line-height: 125%;
+}
